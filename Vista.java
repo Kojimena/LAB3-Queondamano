@@ -245,7 +245,21 @@ public class Vista {
         return framerate ;
     } 
 
+    public String getFechabusqueda(){
 
+        System.out.printf("\nIngrese la fecha del post que desea (formato: dd/mm/aa) ");
+        String fechabusqueda = scan.nextLine();
+        return fechabusqueda;
+    }
 
+    
+    public String getHastagbusqueda(){
+        
+        System.out.printf("\nIngrese el hashtag con el que deseea buscar posts (unicamente la palabra) ");
+
+        String hashtag = scan.nextLine();
+
+        return "#"+ hashtag;
+    }  
 
 }

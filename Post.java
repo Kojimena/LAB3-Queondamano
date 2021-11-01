@@ -34,6 +34,10 @@ public abstract class Post {
     public String getHora(){
         return hora;
     }
+
+    public String getHashtag(){
+        return hashtag;
+    }
     //Datos
 	//Mostrar en pantalla los datos 
 	public void mostrar(){

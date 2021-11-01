@@ -19,6 +19,7 @@ public static void main(String[] args){
     vista.mensaje("\n" +"---QueOndaMano---");
     opcion = vista.menu(); //se llama la opción
     ArrayList<Post> posts = new ArrayList<Post>();
+    ArrayList<Post> postbusqueda = new ArrayList<Post>();
 
 
     /**
@@ -83,10 +84,28 @@ public static void main(String[] args){
 
             case 2:
             //buscar post por fecha
+            String fechabusqueda= vista.getFechabusqueda();
+            vista.mensaje("Los posts encontrados en la fecha"+ fechabusqueda+ " son los siguientes:");
+            for (int i = 0; i < posts.size(); i++) {
+                if (posts.get(i).getFecha().equals(fechabusqueda)) {
+                    System.out.println(posts.get(i));
+                }
+            }
+            
+
             break;
+
             case 3:
             //buscar post por hashtag
+            String hashtagbusqueda= vista.getHastagbusqueda();
+            vista.mensaje("Los posts encontrados con el hashtag"+ hashtagbusqueda+ " son los siguientes:");
+            for (int i = 0; i < posts.size(); i++) {
+                if (posts.get(i).getHashtag().equals(hashtagbusqueda)) {
+                    System.out.println(posts.get(i));
+                }
+            }
             break;
+
             case 4:
             //mostrar posts actuales 
             System.out.println("Posts: ");
