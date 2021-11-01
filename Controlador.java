@@ -31,24 +31,49 @@ public static void main(String[] args){
             case 1:  
             //nuevo post
             int opcionpost = vista.menuPost();
+            String name= vista.getNombre();
+            String hashtag= vista.getHastag();
             switch (opcionpost) {
                 case 1:
-                String name= vista.getNombre();
+                //post de texto
                 String texto = vista.getPosttexto();
-                String hashtag= vista.getHastag();
                 posts.add(new Texto(name,hashtag, texto));
                 break;
 
                 case 2:
+                //posts multimedia
+                String Url = vista.getUrl();
+                int Kb= vista.getTamKb();
+                int opcionmultimedia= vista.menuPmultimedia();
+                switch (opcionmultimedia) {
+                    case 1:
+                    //imagen
+                    String formato= vista.getFormato();
+                    int resolucion= vista.getResolucion();
+                    posts.add(new Imagen(name,hashtag,Url,Kb,formato,resolucion));
+                    break;
+                    case 2:
+                    //audio
+                    break;
+                    case 3:
+                    //video
+                    break;
+                }
+
                 break;
 
                 case 3:
+                //post emoticon
+                String emoticon = vista.getPostemoticon();
+                
+                posts.add(new Emoticon(name,hashtag, emoticon));
                 break;
             }
             for (int i = 0; i < posts.size(); i++) {
-                System.out.println(posts.get(i)); }
+                System.out.println("\n"+posts.get(i)); }
 
             break;
+
             case 2:
             //buscar post por fecha
             break;
@@ -56,9 +81,10 @@ public static void main(String[] args){
             //buscar post por hashtag
             break;
             case 4:
+            //mostrar posts actuales 
+            System.out.println("Posts: ");
             if(posts!=null){
                 for (int i = 0; i < posts.size(); i++) {
-                    System.out.println("Posts: ");
                     System.out.println(posts.get(i));
                    }
             }

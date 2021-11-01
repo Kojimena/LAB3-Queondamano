@@ -123,13 +123,77 @@ public class Vista {
         return Ptexto;
     }  
 
+    public String getPostemoticon(){
+        System.out.printf("\nIngrese el emoticon que desea postear [ejemplos: :) :( <3 ] ");
+
+        String Ptexto= scan.nextLine();
+
+        while(Ptexto.length()>5){
+           mensaje("El emoticon que esta ingresando no es válido, pruebe con otro");
+           Ptexto= scan.nextLine();
+        }
+        return Ptexto;
+    }  
+
     public String getHastag(){
+        
         System.out.printf("\nIngrese el hashtag que deseea agregar (unicamente la palabra)");
 
         String hashtag = scan.nextLine();
 
         return "#"+ hashtag;
     }  
+
+    public String getUrl(){
+        
+        System.out.printf("\nIngrese el url de su post");
+
+        String url = scan.nextLine();
+
+        return url;
+    }  
+
+    public int getTamKb(){
+        int Kb;
+        System.out.printf("\nIngrese el tamaño en Kb de su post");
+        try {
+            Kb = scan.nextInt();
+
+        } catch (InputMismatchException e) {
+            mensaje("Porfavor, ingrese un número");
+                Scanner scan = new Scanner(System.in);
+                Kb = scan.nextInt();
+            
+            }
+		scan.nextLine();
+        return Kb;
+    }
+
+    public int getResolucion(){
+        int resolucion;
+        System.out.printf("\nIngrese la resolución de su imagen en Megapixeles");
+        try {
+            resolucion = scan.nextInt();
+
+        } catch (InputMismatchException e) {
+            mensaje("Porfavor, ingrese un número");
+                Scanner scan = new Scanner(System.in);
+                resolucion = scan.nextInt();
+            
+            }
+		scan.nextLine();
+
+        return resolucion;
+    } 
+
+    public String getFormato(){
+
+        System.out.printf("\nIngrese el formato de su imagen de su imagen (png,gif,jpeg)");
+        String formato = scan.nextLine();
+        return formato;
+    }
+
+
 
 
 

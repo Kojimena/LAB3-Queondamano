@@ -27,7 +27,14 @@ public abstract class Post {
         //comentarios.add(comments);
     }
 
-     //Datos
+    public String getFecha(){
+        return fecha;
+    }
+
+    public String getHora(){
+        return hora;
+    }
+    //Datos
 	//Mostrar en pantalla los datos 
 	public void mostrar(){
 		System.out.println("Nombre: "+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" ");
@@ -35,7 +42,7 @@ public abstract class Post {
 
     @Override
     public String toString() {
-        return "Nombre: "+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes ;
+        return ""+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes ;
     }
 
 
