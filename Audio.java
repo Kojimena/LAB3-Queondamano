@@ -15,6 +15,6 @@ public class Audio extends Multimedia {
 
     @Override
     public String toString() {
-        return " "+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtag + "\n(Audio)"+ url+ "\n"+TamKb+" Kb, "+"Samplerate: "+Samplerate+"Khz"+" ,"+"BitDepth:"+ BitDepth;
+        return " "+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtag + "\n(Audio)"+ url+ "\n"+TamKb+" Kb, "+"Samplerate: "+Samplerate+"Khz"+" ,"+"BitDepth:"+ BitDepth+"\n";
     }
 }

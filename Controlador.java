@@ -19,7 +19,8 @@ public static void main(String[] args){
     vista.mensaje("\n" +"---QueOndaMano---");
     opcion = vista.menu(); //se llama la opción
     ArrayList<Post> posts = new ArrayList<Post>();
-    ArrayList<Post> postbusqueda = new ArrayList<Post>();
+    ArrayList<Post> postbusquedaf = new ArrayList<Post>();
+    ArrayList<Post> postbusquedah = new ArrayList<Post>();
 
 
     /**
@@ -83,26 +84,91 @@ public static void main(String[] args){
             break;
 
             case 2:
+            String resp = "";
             //buscar post por fecha
             String fechabusqueda= vista.getFechabusqueda();
             vista.mensaje("Los posts encontrados en la fecha"+ fechabusqueda+ " son los siguientes:");
             for (int i = 0; i < posts.size(); i++) {
                 if (posts.get(i).getFecha().equals(fechabusqueda)) {
-                    System.out.println(posts.get(i));
+                    postbusquedaf.add(posts.get(i));
+                    //System.out.println(postbusquedaf);
+                    
                 }
             }
-            
+            for (int i = 0; i < postbusquedaf.size(); i++) {
+                for(int j = i + 1; j < postbusquedaf.size(); j++)  {
+                    if(postbusquedaf.get(i).getName().equals(postbusquedaf.get(j).getName())){    
+                        postbusquedaf.remove(j);
+
+                        j--;
+                    }
+                }
+               resp = "\n"+resp + (i+1) + ". " + postbusquedaf.get(i);   
+            }
+            vista.mensaje(resp); 
+            int espacioSelecc = vista.choosePost(postbusquedaf);
+
+            int LikeoComment= vista.menuLikeorcomment();
+            switch (LikeoComment) {
+                case 1:
+                //like 
+                postbusquedaf.get(espacioSelecc).darLike();
+                vista.mensaje("Se ha dado correctamente el like");
+                break;
+                case 2:
+                //comment
+                break;
+                case 3:
+                //salir
+                vista.mensaje("saliendo...");
+                System.exit(0);
+                break;
+            }
 
             break;
 
             case 3:
             //buscar post por hashtag
+            String res = "";
             String hashtagbusqueda= vista.getHastagbusqueda();
             vista.mensaje("Los posts encontrados con el hashtag"+ hashtagbusqueda+ " son los siguientes:");
             for (int i = 0; i < posts.size(); i++) {
                 if (posts.get(i).getHashtag().equals(hashtagbusqueda)) {
-                    System.out.println(posts.get(i));
+                    postbusquedah.add(posts.get(i));
                 }
+            }
+            
+            
+            for (int i = 0; i < postbusquedah.size(); i++) {
+                for(int j = i + 1; j < postbusquedah.size(); j++)  {
+                    if(postbusquedah.get(i).getName().equals(postbusquedah.get(j).getName())){    
+                        postbusquedah.remove(j);
+
+                        j--;
+                    }
+                }
+               res = "\n"+res + (i+1) + ". " + postbusquedah.get(i);   
+            }
+            vista.mensaje(res);  
+                
+            int espacioSelec = vista.choosePost(postbusquedah);
+
+            
+            int LikeComment= vista.menuLikeorcomment();
+            switch (LikeComment) {
+                case 1:
+                //like 
+                postbusquedah.get(espacioSelec).darLike();
+                vista.mensaje("Se ha dado correctamente el like");
+                break;
+                case 2:
+                //comment
+                break;
+                case 3:
+                //salir
+                vista.mensaje("saliendo...");
+                System.exit(0);
+                break;
             }
             break;
 

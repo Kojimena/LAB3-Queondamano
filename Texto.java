@@ -20,12 +20,12 @@ public class Texto extends Post {
     //Datos
 	//Mostrar en pantalla los datos 
 	public void mostrar(){
-		System.out.println("Nombre: "+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtag + "(texto)"+ texto );
+		System.out.println("Nombre: "+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtag + "(texto)"+ texto+"\n" );
 	}
 
     @Override
     public String toString() {
-        return ""+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtag + "\n(texto)"+ texto ;
+        return ""+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtag + "\n(texto)"+ texto+"\n" ;
     }
 
 }

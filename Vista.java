@@ -6,14 +6,13 @@
 **/
 
 import java.util.Scanner;
-
-import javax.swing.JOptionPane;
-
+import java.util.ArrayList;
 import java.util.InputMismatchException; 
 
 public class Vista {
     Scanner scan = new Scanner(System.in);
     int opcion;
+    int contador = 0;
 
     /**
     * @param: String
@@ -262,4 +261,74 @@ public class Vista {
         return "#"+ hashtag;
     }  
 
+    public int menuLikeorcomment(){
+		int opcion;
+                mensaje("\n" +"¿Qué desea hacer?");
+                System.out.println("1. Darle like al post seleccionado");
+                System.out.println("2. Comentar el post seleccionado");
+                System.out.println("3. Salir de QueOndaMano");
+
+                System.out.print("Seleccion: ");
+            try {
+                opcion = scan.nextInt();
+            
+            } catch (InputMismatchException e) {
+                mensaje("Porfavor, ingrese una opción válida");
+                Scanner scan = new Scanner(System.in);
+                opcion = scan.nextInt();
+            
+            }
+        
+		scan.nextLine();
+		return opcion;
+    }
+
+    public static int checkNumerico(String numero){
+        int resultado = 0; //Valor predeterminado 0
+        try{
+            if(numero != null){
+                resultado =  Integer.parseInt(numero);
+
+                if(resultado < 0){
+                    resultado = Math.abs(resultado);
+                }
+            }
+        }catch(NumberFormatException nfe){
+            System.out.println("Error NumberFormatException value: " + numero);
+        }
+        return resultado;
+    }
+
+    public int choosePost(ArrayList<Post> postbusquedah){
+        int space = 0;
+        String esp;
+        int indice =0;
+        
+        while(space == 0){
+              System.out.printf("\nIngrese el post que desea: ");
+              esp = scan.nextLine();
+              int res = checkNumerico(esp);
+              
+              
+              if(res == 0){
+                 System.out.printf("Debes ingresar un numero!");
+              }
+              else{
+                  indice = res - 1;
+                  if(postbusquedah.get(indice).isPost() == true){
+                      System.out.printf("Post seleccionado: " + (res)+"\n");
+                      space=1;
+                  }
+                  else{
+                      System.out.printf("Post seleccionado: " + (res));
+                         space= space +1;
+                  }
+              }
+            
+        }
+          
+        return indice;
+       
+    }
+    
 }

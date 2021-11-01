@@ -106,7 +106,7 @@ public class Fecha {
     public String fechaActual(){
         int year = calendario.get(Calendar.YEAR);
         int month = calendario.get(Calendar.MONTH)+1;
-        int day = calendario.get(Calendar.DAY_OF_WEEK);
+        int day = calendario.get(Calendar.DAY_OF_WEEK)-1;
         return day+"/"+month+"/"+year;
     }
     

@@ -13,6 +13,15 @@ public abstract class Multimedia extends Post{
         this.TamKb= TamKb;
     }
 
+    public int darLike(){
+		if (likes<0){
+			likes = 1;
+		}else{
+            likes= likes+1;
+        }
+		return likes; 
+	}
+
     public String getUrl(){
         return url;
     }

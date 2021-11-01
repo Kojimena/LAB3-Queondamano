@@ -19,6 +19,6 @@ public class Emoticon extends Post {
 
     @Override
     public String toString() {
-        return " "+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtag + "\n(emoticon)"+ emoticon ;
+        return " "+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtag + "\n(emoticon)"+ emoticon+ "\n" ;
     }
 }

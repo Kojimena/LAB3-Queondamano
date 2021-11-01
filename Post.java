@@ -13,6 +13,7 @@ public abstract class Post {
     protected int likes;
     protected String hora;
     protected String fecha;
+    protected boolean sipost;
     Fecha tiempo = new Fecha();
     private ArrayList<Comentarios> comentarios = new ArrayList<>();
 
@@ -31,6 +32,10 @@ public abstract class Post {
         return fecha;
     }
 
+    public String getName(){
+        return nombre;
+    }
+
     public String getHora(){
         return hora;
     }
@@ -38,6 +43,20 @@ public abstract class Post {
     public String getHashtag(){
         return hashtag;
     }
+
+    public int darLike(){
+		if (likes<0){
+			likes = 1;
+		}else{
+            likes= likes+1;
+        }
+		return likes; 
+	}
+
+    public boolean isPost() {
+        return sipost;
+    }
+    
     //Datos
 	//Mostrar en pantalla los datos 
 	public void mostrar(){
