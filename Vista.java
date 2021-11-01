@@ -117,7 +117,7 @@ public class Vista {
         String Ptexto= scan.nextLine();
 
         while(Ptexto.length()>20){
-           mensaje("El texto posee más de 20 caracteres, pruebe con otro texto");
+           mensaje("El texto posee más de 20 caracteres, pruebe con otro texto ");
            Ptexto= scan.nextLine();
         }
         return Ptexto;
@@ -129,7 +129,7 @@ public class Vista {
         String Ptexto= scan.nextLine();
 
         while(Ptexto.length()>5){
-           mensaje("El emoticon que esta ingresando no es válido, pruebe con otro");
+           mensaje("El emoticon que esta ingresando no es válido, pruebe con otro ");
            Ptexto= scan.nextLine();
         }
         return Ptexto;
@@ -137,7 +137,7 @@ public class Vista {
 
     public String getHastag(){
         
-        System.out.printf("\nIngrese el hashtag que deseea agregar (unicamente la palabra)");
+        System.out.printf("\nIngrese el hashtag que deseea agregar (unicamente la palabra) ");
 
         String hashtag = scan.nextLine();
 
@@ -146,7 +146,7 @@ public class Vista {
 
     public String getUrl(){
         
-        System.out.printf("\nIngrese el url de su post");
+        System.out.printf("\nIngrese el url de su post ");
 
         String url = scan.nextLine();
 
@@ -155,7 +155,7 @@ public class Vista {
 
     public int getTamKb(){
         int Kb;
-        System.out.printf("\nIngrese el tamaño en Kb de su post");
+        System.out.printf("\nIngrese el tamaño en Kb de su post ");
         try {
             Kb = scan.nextInt();
 
@@ -171,7 +171,7 @@ public class Vista {
 
     public int getResolucion(){
         int resolucion;
-        System.out.printf("\nIngrese la resolución de su imagen en Megapixeles");
+        System.out.printf("\nIngrese la resolución de su imagen en Megapixeles ");
         try {
             resolucion = scan.nextInt();
 
@@ -188,13 +188,62 @@ public class Vista {
 
     public String getFormato(){
 
-        System.out.printf("\nIngrese el formato de su imagen de su imagen (png,gif,jpeg)");
+        System.out.printf("\nIngrese el formato de su imagen de su imagen (png,gif,jpeg) ");
         String formato = scan.nextLine();
         return formato;
     }
 
 
+    public int getSampleRate(){
+        int SampleRate;
+        System.out.printf("\nIngrese el SampleRate del audio (Khz) ");
+        try {
+            SampleRate = scan.nextInt();
 
+        } catch (InputMismatchException e) {
+            mensaje("Porfavor, ingrese un número");
+                Scanner scan = new Scanner(System.in);
+                SampleRate = scan.nextInt();
+            
+            }
+		scan.nextLine();
+
+        return SampleRate;
+    } 
+
+    public int getBitdepth(){
+        int Bitdepth;
+        System.out.printf("\nIngrese el Bitdepth del audio ");
+        try {
+            Bitdepth = scan.nextInt();
+
+        } catch (InputMismatchException e) {
+            mensaje("Porfavor, ingrese un número");
+                Scanner scan = new Scanner(System.in);
+                Bitdepth = scan.nextInt();
+            
+            }
+		scan.nextLine();
+
+        return Bitdepth;
+    } 
+
+    public int getFramerate(){
+        int framerate ;
+        System.out.printf("\nIngrese el framerate del video (fps) ");
+        try {
+            framerate  = scan.nextInt();
+
+        } catch (InputMismatchException e) {
+            mensaje("Porfavor, ingrese un número");
+                Scanner scan = new Scanner(System.in);
+                framerate  = scan.nextInt();
+            
+            }
+		scan.nextLine();
+
+        return framerate ;
+    } 
 
 
 

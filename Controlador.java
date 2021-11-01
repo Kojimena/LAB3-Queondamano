@@ -52,11 +52,18 @@ public static void main(String[] args){
                     int resolucion= vista.getResolucion();
                     posts.add(new Imagen(name,hashtag,Url,Kb,formato,resolucion));
                     break;
+
                     case 2:
                     //audio
+                    int Samplerate = vista.getSampleRate();
+                    int Bitdepth = vista.getBitdepth();
+                    posts.add(new Audio(name, hashtag, Url, Kb, Samplerate, Bitdepth));
                     break;
+
                     case 3:
                     //video
+                    int framerate= vista.getFramerate();
+                    posts.add(new Video(name, hashtag, Url, Kb, framerate));
                     break;
                 }
 
