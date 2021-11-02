@@ -4,11 +4,12 @@
 * @file: Video.java
 * 
 **/
+import java.util.ArrayList;
 public class Video extends Multimedia{
     private int Framerate;
 
-    public Video(String nombre, String hashtag, String url, int TamKb,int Framerate){
-    super(nombre, hashtag, url, TamKb);
+    public Video(String nombre,ArrayList<String> hashtags , String url, int TamKb,int Framerate, String fecha){
+    super(nombre, hashtags , url, TamKb,fecha);
     this.Framerate= Framerate;
     }
 
@@ -20,6 +21,6 @@ public class Video extends Multimedia{
 
     @Override
     public String toString() {
-        return " "+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtag + "\n(Audio)"+ url+ "\n"+TamKb+" Kb, "+"Framerate: "+ Framerate+"\n"+"---> comentarios: "+ comentarios+"\n";
+        return " "+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtags + "\n(Audio)"+ url+ "\n"+TamKb+" Kb, "+"Framerate: "+ Framerate+"\n"+"---> comentarios: "+ comentarios+"\n";
     }
 }

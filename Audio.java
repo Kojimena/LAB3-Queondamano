@@ -4,11 +4,12 @@
 * @file: Audio.java
 * Hereda de multimedia
 **/
+import java.util.ArrayList;
 public class Audio extends Multimedia {
     private int Samplerate;
     private int BitDepth;
-    public Audio(String nombre, String hashtag, String url, int TamKb, int Samplerate, int BitDepth){
-        super(nombre, hashtag, url, TamKb);
+    public Audio(String nombre,ArrayList<String> hashtags, String url, int TamKb, int Samplerate, int BitDepth, String fecha){
+        super(nombre,hashtags, url, TamKb,fecha);
         this.Samplerate= Samplerate;
         this.BitDepth= BitDepth;
     }
@@ -21,6 +22,6 @@ public class Audio extends Multimedia {
 
     @Override
     public String toString() {
-        return " "+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtag + "\n(Audio)"+ url+ "\n"+TamKb+" Kb, "+"Samplerate: "+Samplerate+"Khz"+" ,"+"BitDepth:"+ BitDepth+"\n"+"---> comentarios : "+ comentarios+"\n";
+        return " "+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtags + "\n(Audio)"+ url+ "\n"+TamKb+" Kb, "+"Samplerate: "+Samplerate+"Khz"+" ,"+"BitDepth:"+ BitDepth+"\n"+"---> comentarios : "+ comentarios+"\n";
     }
 }

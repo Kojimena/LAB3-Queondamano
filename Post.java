@@ -10,20 +10,23 @@ import java.util.ArrayList;
 public abstract class Post {
     //propiedades protected 
     protected String nombre;
-    protected String hashtag;
+    //protected String hashtag; //n
     protected int likes;
     protected String hora;
     protected String fecha;
     protected boolean sipost;
     Fecha tiempo = new Fecha();
     protected ArrayList<Comentarios> comentarios = new ArrayList<>();
+    protected ArrayList<String> hashtags = new ArrayList<>();//n
 
-    public Post(String nombre, String hashtag){
+    public Post(String nombre,ArrayList<String> hashtagsp, String fecha){
         this.nombre = nombre;
         likes = 0;
         hora = tiempo.horaActual();
-        fecha =tiempo.fechaActual();
-        this.hashtag= hashtag; 
+        this.fecha = fecha;
+        for (int i = 0; i < hashtagsp.size(); i++){
+            hashtags.add(hashtagsp.get(i));
+        }
         //Comentarios comments = new Comentarios();
         //comentarios.add(comments);
     }
@@ -40,9 +43,9 @@ public abstract class Post {
         return hora;
     }
 
-    public String getHashtag(){
-        return hashtag;
-    }
+    public ArrayList<String> hashtagsgetHashtag(){
+        return hashtags;
+    } //n
 
     public int darLike(){
 		if (likes<0){

@@ -134,13 +134,25 @@ public class Vista {
         return Ptexto;
     }  
 
-    public String getHastag(){
-        
+    public ArrayList<String> getHastag(){
+        ArrayList<String> hashtagsv= new ArrayList<String>();
+        int sihashtag ;
+        String hashtag;
+
+        System.out.printf("\n Agregue el hashtag para el post ");  
+        do {
         System.out.printf("\nIngrese el hashtag que deseea agregar (unicamente la palabra) ");
+        hashtag = scan.nextLine();
+        hashtagsv.add("#"+ hashtag);
+        System.out.printf("\n ¿Desea agregar otro hashtag elija(1 o 2)? 1.si 2.no");
+        sihashtag = scan.nextInt();
+        scan.nextLine();
+        if (sihashtag == 2)
+                System.out.println( "No se agregarán" );
+        }
+        while (sihashtag == 1);
 
-        String hashtag = scan.nextLine();
-
-        return "#"+ hashtag;
+        return hashtagsv;
     }  
 
     public String getUrl(){
@@ -342,5 +354,14 @@ public class Vista {
         }
         return Ptexto;
     }  
+
+    public String getDate(){
+        
+        System.out.printf("\nIngrese la fecha del post en formato (dd/mm/aa) ");
+
+        String date = scan.nextLine();
+
+        return date;
+    } 
     
 }

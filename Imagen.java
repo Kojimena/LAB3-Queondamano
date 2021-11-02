@@ -4,12 +4,14 @@
 * @file: Imagen.java
 * Hereda de multimedia
 **/
+import java.util.ArrayList;
+
 public class Imagen extends Multimedia {
     private String formato;
     private int resolucion;
 
-    public Imagen(String nombre, String hashtag, String url, int TamKb, String formato, int resolucion){
-        super(nombre, hashtag, url, TamKb);
+    public Imagen(String nombre, ArrayList<String> hashtags , String url, int TamKb, String formato, int resolucion, String fecha){
+        super(nombre,hashtags, url, TamKb,fecha);
         this.formato= formato;
         this.resolucion=resolucion;
     }
@@ -23,6 +25,6 @@ public class Imagen extends Multimedia {
 
     @Override
     public String toString() {
-        return " "+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtag + "\n(Imagen)"+ url+ "\n"+TamKb+" Kb, "+formato+" ,"+ resolucion+ " Megapixeles "+"\n"+"---> comentarios : "+ comentarios+"\n" ;
+        return " "+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtags + "\n(Imagen)"+ url+ "\n"+TamKb+" Kb, "+formato+" ,"+ resolucion+ " Megapixeles "+"\n"+"---> comentarios : "+ comentarios+"\n" ;
     }
 }

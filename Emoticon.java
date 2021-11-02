@@ -4,11 +4,13 @@
 * @file: Emoticon.java
 * Creación de clase hija emoticon
 **/
+import java.util.ArrayList;
+
 public class Emoticon extends Post {
     private String emoticon;
 
-    public Emoticon(String nombre, String hashtag, String emoticon){
-        super(nombre,hashtag);
+    public Emoticon(String nombre,ArrayList<String> hashtags , String emoticon, String fecha){
+        super(nombre,hashtags,fecha);
         this.emoticon= emoticon;
     }
 
@@ -25,6 +27,6 @@ public class Emoticon extends Post {
 
     @Override
     public String toString() {
-        return " "+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtag + "\n(emoticon)"+ emoticon+ "\n"+"---> comentarios : "+ comentarios+"\n";
+        return " "+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtags + "\n(emoticon)"+ emoticon+ "\n"+"---> comentarios : "+ comentarios+"\n";
     }
 }

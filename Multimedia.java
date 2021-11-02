@@ -4,11 +4,13 @@
 * @file: Multimedia.java
 * 
 **/
+import java.util.ArrayList;
+
 public abstract class Multimedia extends Post{
     protected String url;
     protected int TamKb;
-    public Multimedia(String nombre, String hashtag, String url, int TamKb){
-        super(nombre,hashtag);
+    public Multimedia(String nombre,ArrayList<String> hashtags , String url, int TamKb, String fecha){
+        super(nombre,hashtags,fecha);
         this.url= url;
         this.TamKb= TamKb;
     }

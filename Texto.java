@@ -4,11 +4,13 @@
 * @file: Texto.java
 * Creación de clase hija texto
 **/
+import java.util.ArrayList;
+
 public class Texto extends Post {
     private String texto;
 
-    public Texto(String nombre, String hashtag, String texto){
-        super(nombre,hashtag);
+    public Texto(String nombre, ArrayList<String> hashtags , String texto, String fecha){
+        super(nombre,hashtags,fecha);
         this.texto= texto;
     }
 
@@ -25,7 +27,7 @@ public class Texto extends Post {
 
     @Override
     public String toString() {
-        return ""+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtag + "\n(texto)"+ texto+"\n"+"---> comentarios : "+ comentarios+"\n";
+        return ""+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtags + "\n(texto)"+ texto+"\n"+"---> comentarios : "+ comentarios+"\n";
     }
 
 }

@@ -20,8 +20,8 @@ public static void main(String[] args){
     vista.mensaje("\n" +"---QueOndaMano---");
     opcion = vista.menu(); //se llama la opción
     ArrayList<Post> posts = new ArrayList<Post>();
-    ArrayList<Post> postbusquedaf = new ArrayList<Post>();
-    ArrayList<Post> postbusquedah = new ArrayList<Post>();
+
+
 
 
     /**
@@ -35,12 +35,13 @@ public static void main(String[] args){
             //nuevo post
             int opcionpost = vista.menuPost();
             String name= vista.getNombre();
-            String hashtag= vista.getHastag();
+            ArrayList<String>hashtag= vista.getHastag();
+            String fecha = vista.getDate();
             switch (opcionpost) {
                 case 1:
                 //post de texto
                 String texto = vista.getPosttexto();
-                posts.add(new Texto(name,hashtag, texto));
+                posts.add(new Texto(name,hashtag, texto,fecha));
                 break;
 
                 case 2:
@@ -53,20 +54,20 @@ public static void main(String[] args){
                     //imagen
                     String formato= vista.getFormato();
                     int resolucion= vista.getResolucion();
-                    posts.add(new Imagen(name,hashtag,Url,Kb,formato,resolucion));
+                    posts.add(new Imagen(name,hashtag,Url,Kb,formato,resolucion,fecha));
                     break;
 
                     case 2:
                     //audio
                     int Samplerate = vista.getSampleRate();
                     int Bitdepth = vista.getBitdepth();
-                    posts.add(new Audio(name, hashtag, Url, Kb, Samplerate, Bitdepth));
+                    posts.add(new Audio(name, hashtag, Url, Kb, Samplerate, Bitdepth,fecha));
                     break;
 
                     case 3:
                     //video
                     int framerate= vista.getFramerate();
-                    posts.add(new Video(name, hashtag, Url, Kb, framerate));
+                    posts.add(new Video(name, hashtag, Url, Kb, framerate,fecha));
                     break;
                 }
 
@@ -76,7 +77,7 @@ public static void main(String[] args){
                 //post emoticon
                 String emoticon = vista.getPostemoticon();
                 
-                posts.add(new Emoticon(name,hashtag, emoticon));
+                posts.add(new Emoticon(name,hashtag, emoticon,fecha));
                 break;
             }
             for (int i = 0; i < posts.size(); i++) {
@@ -85,31 +86,24 @@ public static void main(String[] args){
             break;
 
             case 2:
-            String resp = "";
             //buscar post por fecha
+            ArrayList<Post> postbusquedaf = new ArrayList<Post>();
+            String resp = "";
             String fechabusqueda= vista.getFechabusqueda();
             vista.mensaje("Los posts encontrados en la fecha"+ fechabusqueda+ " son los siguientes:");
             for (int i = 0; i < posts.size(); i++) {
                 if (posts.get(i).getFecha().equals(fechabusqueda)) {
                     postbusquedaf.add(posts.get(i));
-                    //System.out.println(postbusquedaf);
                     
                 }
             }
             for (int i = 0; i < postbusquedaf.size(); i++) {
-                for(int j = i + 1; j < postbusquedaf.size(); j++)  {
-                    if(postbusquedaf.get(i).getName().equals(postbusquedaf.get(j).getName())){    
-                        postbusquedaf.remove(j);
-
-                        j--;
-                    }
-                }
                resp = "\n"+resp + (i+1) + ". " + postbusquedaf.get(i);   
             }
             vista.mensaje(resp); 
 
             int espacioSelecc = vista.choosePost(postbusquedaf);
-            postbusquedah.get(espacioSelecc).mostrar();
+            postbusquedaf.get(espacioSelecc).mostrar();
 
             int LikeoComment= vista.menuLikeorcomment();
             switch (LikeoComment) {
@@ -135,24 +129,20 @@ public static void main(String[] args){
 
             case 3:
             //buscar post por hashtag
+            ArrayList<Post> postbusquedah = new ArrayList<Post>();
             String res = "";
             String hashtagbusqueda= vista.getHastagbusqueda();
             vista.mensaje("Los posts encontrados con el hashtag"+ hashtagbusqueda+ " son los siguientes:");
             for (int i = 0; i < posts.size(); i++) {
-                if (posts.get(i).getHashtag().equals(hashtagbusqueda)) {
+                for (int j = 0; j < posts.get(i).hashtagsgetHashtag().size(); j++){
+                    if (posts.get(i).hashtagsgetHashtag().get(j).equals(hashtagbusqueda)) {
                     postbusquedah.add(posts.get(i));
+                    }
                 }
             }
             
             
             for (int i = 0; i < postbusquedah.size(); i++) {
-                for(int j = i + 1; j < postbusquedah.size(); j++)  {
-                    if(postbusquedah.get(i).getName().equals(postbusquedah.get(j).getName())){    
-                        postbusquedah.remove(j);
-
-                        j--;
-                    }
-                }
                res = "\n"+res + (i+1) + ". " + postbusquedah.get(i);   
             }
             vista.mensaje(res);  
