@@ -16,7 +16,6 @@ private static Vista vista = new Vista();
 
 public static void main(String[] args){
     int opcion;
-    Comentarios comments;
     vista.mensaje("\n" +"---QueOndaMano---");
     opcion = vista.menu(); //se llama la opción
     ArrayList<Post> posts = new ArrayList<Post>();

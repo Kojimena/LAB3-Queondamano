@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.InputMismatchException; 
 
 public class Vista {
-    Scanner scan = new Scanner(System.in);
-    int opcion;
-    int contador = 0;
+   private Scanner scan = new Scanner(System.in);
+   private  int opcion;
+   private int contador = 0;
 
     /**
     * @param: String
@@ -317,7 +317,7 @@ public class Vista {
         int indice =0;
         
         while(space == 0){
-              System.out.printf("\nIngrese el post que desea: ");
+              System.out.printf("\nIngrese el número del post que desea: ");
               esp = scan.nextLine();
               int res = checkNumerico(esp);
               
