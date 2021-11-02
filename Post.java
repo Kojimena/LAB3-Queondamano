@@ -6,6 +6,7 @@
 **/
 import java.util.ArrayList;
 
+
 public abstract class Post {
     //propiedades protected 
     protected String nombre;
@@ -15,15 +16,14 @@ public abstract class Post {
     protected String fecha;
     protected boolean sipost;
     Fecha tiempo = new Fecha();
-    private ArrayList<Comentarios> comentarios = new ArrayList<>();
-
+    protected ArrayList<Comentarios> comentarios = new ArrayList<>();
 
     public Post(String nombre, String hashtag){
         this.nombre = nombre;
         likes = 0;
         hora = tiempo.horaActual();
         fecha =tiempo.fechaActual();
-        this.hashtag= hashtag;
+        this.hashtag= hashtag; 
         //Comentarios comments = new Comentarios();
         //comentarios.add(comments);
     }
@@ -53,10 +53,19 @@ public abstract class Post {
 		return likes; 
 	}
 
+    public ArrayList<Comentarios> Comentar(Comentarios comentario){
+        comentarios.add(comentario);
+        return comentarios;
+    }
+
+
     public boolean isPost() {
         return sipost;
     }
     
+    public int getLikes(){
+        return likes;
+    }
     //Datos
 	//Mostrar en pantalla los datos 
 	public void mostrar(){

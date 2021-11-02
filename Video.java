@@ -14,6 +14,6 @@ public class Video extends Multimedia{
 
     @Override
     public String toString() {
-        return " "+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtag + "\n(Audio)"+ url+ "\n"+TamKb+" Kb, "+"Framerate: "+ Framerate+"\n";
+        return " "+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtag + "\n(Audio)"+ url+ "\n"+TamKb+" Kb, "+"Framerate: "+ Framerate+"\n"+"---> comentarios: "+ comentarios+"\n";
     }
 }

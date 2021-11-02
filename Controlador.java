@@ -16,6 +16,7 @@ private static Vista vista = new Vista();
 
 public static void main(String[] args){
     int opcion;
+    Comentarios comments;
     vista.mensaje("\n" +"---QueOndaMano---");
     opcion = vista.menu(); //se llama la opción
     ArrayList<Post> posts = new ArrayList<Post>();
@@ -163,6 +164,8 @@ public static void main(String[] args){
                 break;
                 case 2:
                 //comment
+                String nuevocomentario= vista.getComentariospost();
+                postbusquedah.get(espacioSelec).Comentar(new Comentarios(nuevocomentario));
                 break;
                 case 3:
                 //salir
@@ -180,7 +183,7 @@ public static void main(String[] args){
                     System.out.println(posts.get(i));
                    }
             }
-            else    vista.mensaje("");  
+            else    vista.mensaje("No hay posts");  
             break;
 
             case 5:

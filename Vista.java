@@ -330,5 +330,17 @@ public class Vista {
         return indice;
        
     }
+
+    public String getComentariospost(){
+        System.out.printf("\nIngrese el comentario que desea colocar en el post (longitud máx:20 caracteres) ");
+
+        String Ptexto= scan.nextLine();
+
+        while(Ptexto.length()>20){
+           mensaje("El comentario posee más de 20 caracteres, pruebe con otro texto ");
+           Ptexto= scan.nextLine();
+        }
+        return Ptexto;
+    }  
     
 }

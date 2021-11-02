@@ -16,6 +16,6 @@ public class Imagen extends Multimedia {
 
     @Override
     public String toString() {
-        return " "+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtag + "\n(Imagen)"+ url+ "\n"+TamKb+" Kb, "+formato+" ,"+ resolucion+ " Megapixeles "+"\n" ;
+        return " "+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtag + "\n(Imagen)"+ url+ "\n"+TamKb+" Kb, "+formato+" ,"+ resolucion+ " Megapixeles "+"\n"+"---> comentarios : "+ comentarios+"\n" ;
     }
 }

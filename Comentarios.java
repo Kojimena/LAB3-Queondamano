@@ -8,11 +8,20 @@
 public class Comentarios {
     private String comentario;
 
-    public Comentarios(String texto){
+    public Comentarios(String comentario){
         this.comentario= comentario;
     }
 
     public Comentarios(){
         this.comentario= "ninguno";
+    }
+
+    public String getComentario(){
+        return comentario;
+    }
+
+    @Override
+    public String toString() {
+        return " "+ comentario;
     }
 }

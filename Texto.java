@@ -25,7 +25,7 @@ public class Texto extends Post {
 
     @Override
     public String toString() {
-        return ""+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtag + "\n(texto)"+ texto+"\n" ;
+        return ""+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtag + "\n(texto)"+ texto+"\n"+"---> comentarios : "+ comentarios+"\n";
     }
 
 }
