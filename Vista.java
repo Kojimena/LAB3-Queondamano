@@ -30,8 +30,8 @@ public class Vista {
 		int opcion;
                 mensaje("\n" +"¿Qué desea hacer?");
                 System.out.println("1. Realizar un post");
-                System.out.println("2. Buscar un post por fecha en particular ");
-                System.out.println("3. Buscar un post por hashtag");
+                System.out.println("2. Buscar y mostrar un post por fecha en particular ");
+                System.out.println("3. Buscar y mostrar un post por hashtag");
                 System.out.println("4. Mostrar posts");
                 System.out.println("5. Salir de QueOndamano ");
 

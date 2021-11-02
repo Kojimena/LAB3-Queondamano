@@ -14,6 +14,13 @@ public class Imagen extends Multimedia {
         this.resolucion=resolucion;
     }
 
+    //Datos
+	//Mostrar en pantalla los datos 
+	public void mostrar(){
+		System.out.println("\n"+"estoy mostrando esta imagen... con "+ resolucion + " Megapixeles de resolución ");
+	}
+
+
     @Override
     public String toString() {
         return " "+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtag + "\n(Imagen)"+ url+ "\n"+TamKb+" Kb, "+formato+" ,"+ resolucion+ " Megapixeles "+"\n"+"---> comentarios : "+ comentarios+"\n" ;

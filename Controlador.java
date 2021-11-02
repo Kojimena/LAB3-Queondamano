@@ -107,7 +107,9 @@ public static void main(String[] args){
                resp = "\n"+resp + (i+1) + ". " + postbusquedaf.get(i);   
             }
             vista.mensaje(resp); 
+
             int espacioSelecc = vista.choosePost(postbusquedaf);
+            postbusquedah.get(espacioSelecc).mostrar();
 
             int LikeoComment= vista.menuLikeorcomment();
             switch (LikeoComment) {
@@ -118,6 +120,9 @@ public static void main(String[] args){
                 break;
                 case 2:
                 //comment
+                String nuevocomentario= vista.getComentariospost();
+                postbusquedaf.get(espacioSelecc).Comentar(new Comentarios(nuevocomentario));
+                vista.mensaje("Se ha comentado el post");
                 break;
                 case 3:
                 //salir
@@ -153,7 +158,7 @@ public static void main(String[] args){
             vista.mensaje(res);  
                 
             int espacioSelec = vista.choosePost(postbusquedah);
-
+            postbusquedah.get(espacioSelec).mostrar();
             
             int LikeComment= vista.menuLikeorcomment();
             switch (LikeComment) {
@@ -166,6 +171,7 @@ public static void main(String[] args){
                 //comment
                 String nuevocomentario= vista.getComentariospost();
                 postbusquedah.get(espacioSelec).Comentar(new Comentarios(nuevocomentario));
+                vista.mensaje("Se ha comentado el post");
                 break;
                 case 3:
                 //salir

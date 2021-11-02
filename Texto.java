@@ -20,7 +20,7 @@ public class Texto extends Post {
     //Datos
 	//Mostrar en pantalla los datos 
 	public void mostrar(){
-		System.out.println("Nombre: "+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtag + "(texto)"+ texto+"\n" );
+		System.out.println("\n"+"texto: "+ texto);
 	}
 
     @Override

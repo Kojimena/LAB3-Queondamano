@@ -12,6 +12,12 @@ public class Video extends Multimedia{
     this.Framerate= Framerate;
     }
 
+    //Datos
+	//Mostrar en pantalla los datos 
+	public void mostrar(){
+		System.out.println("\n"+"voy a MOSTRAR este video... con "+ Framerate + " fps ");
+	}
+
     @Override
     public String toString() {
         return " "+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtag + "\n(Audio)"+ url+ "\n"+TamKb+" Kb, "+"Framerate: "+ Framerate+"\n"+"---> comentarios: "+ comentarios+"\n";

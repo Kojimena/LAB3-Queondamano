@@ -66,11 +66,10 @@ public abstract class Post {
     public int getLikes(){
         return likes;
     }
+
     //Datos
 	//Mostrar en pantalla los datos 
-	public void mostrar(){
-		System.out.println("Nombre: "+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" ");
-	}
+	public abstract void mostrar();
 
     @Override
     public String toString() {

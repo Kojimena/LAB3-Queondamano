@@ -17,6 +17,12 @@ public class Emoticon extends Post {
         return emoticon;
     }
 
+    //Datos
+	//Mostrar en pantalla los datos 
+	public void mostrar(){
+		System.out.println("\n"+"emoticon: "+ emoticon);
+	}
+
     @Override
     public String toString() {
         return " "+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtag + "\n(emoticon)"+ emoticon+ "\n"+"---> comentarios : "+ comentarios+"\n";

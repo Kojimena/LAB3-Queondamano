@@ -13,6 +13,12 @@ public class Audio extends Multimedia {
         this.BitDepth= BitDepth;
     }
 
+    //Datos
+	//Mostrar en pantalla los datos 
+	public void mostrar(){
+		System.out.println("\n"+"voy a SONAR este audio... con "+ Samplerate + "kHz de sample rate y " + BitDepth+" de bit depth");
+	}
+
     @Override
     public String toString() {
         return " "+nombre+"  "+ fecha + "  "+ hora +" "+ "likes:"+ likes +" "+ "\n"+ hashtag + "\n(Audio)"+ url+ "\n"+TamKb+" Kb, "+"Samplerate: "+Samplerate+"Khz"+" ,"+"BitDepth:"+ BitDepth+"\n"+"---> comentarios : "+ comentarios+"\n";
