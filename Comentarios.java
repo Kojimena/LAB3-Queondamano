@@ -6,8 +6,9 @@
 **/
 
 public class Comentarios {
-    private String comentario;
+    private String comentario; //propiedades private
 
+    //constructor de comentarios
     public Comentarios(String comentario){
         this.comentario= comentario;
     }
@@ -16,6 +17,10 @@ public class Comentarios {
         this.comentario= "ninguno";
     }
 
+    /**
+    * @return comentario
+    * getter
+    */
     public String getComentario(){
         return comentario;
     }

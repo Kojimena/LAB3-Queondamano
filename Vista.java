@@ -5,11 +5,13 @@
 * Esta clase es la vista del programa.Imprime resultados y pide datos.
 **/
 
+//imports
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.InputMismatchException; 
 
 public class Vista {
+    //propiedades private a usar
    private Scanner scan = new Scanner(System.in);
    private  int opcion;
    private int contador = 0;
@@ -51,8 +53,9 @@ public class Vista {
     }
 
     /**
-    * Despliega el menú de opciones de tipo de post para el usuario. Luego, recibe la opción elegida por el usuario y la devuelve.
+    * Despliega el menú de opciones para el usuario. Luego, recibe la opción elegida por el usuario y la devuelve.
     * @return La opción elegida por el usuario
+    * @throws InputMismatchException
     */
     public int menuPost(){
 		int opcion;
@@ -77,8 +80,9 @@ public class Vista {
     }
 
     /**
-    * Despliega el menú de opciones de post multimedia para el usuario. Luego, recibe la opción elegida por el usuario y la devuelve.
+    * Despliega el menú de opciones para el usuario. Luego, recibe la opción elegida por el usuario y la devuelve.
     * @return La opción elegida por el usuario
+    * @throws InputMismatchException
     */
     public int menuPmultimedia(){
 		int opcion;
@@ -102,6 +106,9 @@ public class Vista {
 		return opcion;
     }
 
+    /**
+    * @return nombre de usuario 
+    */
     public String getNombre(){
         System.out.printf("\nIngrese su nombre de usuario ");
 
@@ -110,6 +117,10 @@ public class Vista {
         return nombre;
     }  
 
+    /**
+    * @return Texto a publicar 
+    * 
+    */
     public String getPosttexto(){
         System.out.printf("\nIngrese el Texto que desea publicar (longitud máx:20 caracteres) ");
 
@@ -122,6 +133,10 @@ public class Vista {
         return Ptexto;
     }  
 
+    /**
+    * @return emoticon a publicar
+    * 
+    */
     public String getPostemoticon(){
         System.out.printf("\nIngrese el emoticon que desea postear [ejemplos: :) :( <3 ] ");
 
@@ -134,6 +149,10 @@ public class Vista {
         return Ptexto;
     }  
 
+    /**
+    * @return Arraylist de hashtags
+    * 
+    */
     public ArrayList<String> getHastag(){
         ArrayList<String> hashtagsv= new ArrayList<String>();
         int sihashtag ;
@@ -155,6 +174,9 @@ public class Vista {
         return hashtagsv;
     }  
 
+    /**
+    * @return Url del post
+    */
     public String getUrl(){
         
         System.out.printf("\nIngrese el url de su post ");
@@ -164,6 +186,10 @@ public class Vista {
         return url;
     }  
 
+    /**
+    * @return Tamaño en Kb del post
+    * @throws InputMismatchException
+    */
     public int getTamKb(){
         int Kb;
         System.out.printf("\nIngrese el tamaño en Kb de su post ");
@@ -180,6 +206,10 @@ public class Vista {
         return Kb;
     }
 
+    /**
+    * @return Resolución de la imagen
+    * @throws InputMismatchException
+    */
     public int getResolucion(){
         int resolucion;
         System.out.printf("\nIngrese la resolución de su imagen en Megapixeles ");
@@ -197,6 +227,9 @@ public class Vista {
         return resolucion;
     } 
 
+    /**
+    * @return Formato de la imagen 
+    */
     public String getFormato(){
 
         System.out.printf("\nIngrese el formato de su imagen de su imagen (png,gif,jpeg) ");
@@ -205,6 +238,10 @@ public class Vista {
     }
 
 
+    /**
+    * @return int Samplerate
+    * @throws InputMismatchException
+    */
     public int getSampleRate(){
         int SampleRate;
         System.out.printf("\nIngrese el SampleRate del audio (Khz) ");
@@ -222,6 +259,10 @@ public class Vista {
         return SampleRate;
     } 
 
+    /**
+    * @return Bitdepth del audio
+    * @throws InputMismatchException
+    */
     public int getBitdepth(){
         int Bitdepth;
         System.out.printf("\nIngrese el Bitdepth del audio ");
@@ -239,6 +280,10 @@ public class Vista {
         return Bitdepth;
     } 
 
+    /**
+    * @return Framerate del video
+    * @throws InputMismatchException
+    */
     public int getFramerate(){
         int framerate ;
         System.out.printf("\nIngrese el framerate del video (fps) ");
@@ -256,6 +301,9 @@ public class Vista {
         return framerate ;
     } 
 
+    /**
+    * @return fecha de busqueda
+    */
     public String getFechabusqueda(){
 
         System.out.printf("\nIngrese la fecha del post que desea (formato: dd/mm/aa) ");
@@ -263,7 +311,9 @@ public class Vista {
         return fechabusqueda;
     }
 
-    
+    /**
+    * @return Hastag a buscar 
+    */
     public String getHastagbusqueda(){
         
         System.out.printf("\nIngrese el hashtag con el que deseea buscar posts (unicamente la palabra) ");
@@ -273,6 +323,11 @@ public class Vista {
         return "#"+ hashtag;
     }  
 
+    /**
+    * Despliega el menú de opciones para el usuario. Luego, recibe la opción elegida por el usuario y la devuelve.
+    * @return La opción elegida por el usuario
+    * @throws InputMismatchException
+    */
     public int menuLikeorcomment(){
 		int opcion;
                 mensaje("\n" +"¿Qué desea hacer?");
@@ -295,6 +350,11 @@ public class Vista {
 		return opcion;
     }
 
+    /**
+    * @param  numero
+    * @return resultado
+    * @throws NumberFormatException
+    */
     public static int checkNumerico(String numero){
         int resultado = 0; //Valor predeterminado 0
         try{
@@ -311,6 +371,10 @@ public class Vista {
         return resultado;
     }
 
+    /**
+	* @param arraylist de postbusqueda
+	* @return El indice
+	*/
     public int choosePost(ArrayList<Post> postbusquedah){
         int space = 0;
         String esp;
@@ -343,6 +407,9 @@ public class Vista {
        
     }
 
+    /**
+	 * @return El post de texto
+	 */
     public String getComentariospost(){
         System.out.printf("\nIngrese el comentario que desea colocar en el post (longitud máx:20 caracteres) ");
 
@@ -355,6 +422,9 @@ public class Vista {
         return Ptexto;
     }  
 
+    /**
+	* @return Fecha de busqueda
+	*/
     public String getDate(){
         
         System.out.printf("\nIngrese la fecha del post en formato (dd/mm/aa) ");

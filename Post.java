@@ -9,16 +9,16 @@ import java.util.ArrayList;
 
 public abstract class Post {
     //propiedades protected 
-    protected String nombre;
-    //protected String hashtag; //n
+    protected String nombre; //propiedades protected por ser clase abstracta
     protected int likes;
     protected String hora;
     protected String fecha;
     protected boolean sipost;
     Fecha tiempo = new Fecha();
-    protected ArrayList<Comentarios> comentarios = new ArrayList<>();
-    protected ArrayList<String> hashtags = new ArrayList<>();//n
+    protected ArrayList<Comentarios> comentarios = new ArrayList<>(); //string de comentarios
+    protected ArrayList<String> hashtags = new ArrayList<>();//string de hashtags
 
+    //constructor
     public Post(String nombre,ArrayList<String> hashtagsp, String fecha){
         this.nombre = nombre;
         likes = 0;
@@ -27,26 +27,45 @@ public abstract class Post {
         for (int i = 0; i < hashtagsp.size(); i++){
             hashtags.add(hashtagsp.get(i));
         }
-        //Comentarios comments = new Comentarios();
-        //comentarios.add(comments);
+ 
     }
 
+    /**
+    * @return fecha
+    * getter
+    */
     public String getFecha(){
         return fecha;
     }
 
+    /**
+    * @return nombre
+    * getter
+    */
     public String getName(){
         return nombre;
     }
 
+    /**
+    * @return Hora
+    * getter
+    */
     public String getHora(){
         return hora;
     }
 
+    /**
+    * @return Arraylist de hashtags
+    * getter
+    */
     public ArrayList<String> hashtagsgetHashtag(){
         return hashtags;
-    } //n
+    } 
 
+    /**
+    * @return likes
+    * método para incrementar likes
+    */
     public int darLike(){
 		if (likes<0){
 			likes = 1;
@@ -56,12 +75,19 @@ public abstract class Post {
 		return likes; 
 	}
 
+    /**
+    * @return comentarios
+    * @param Comentario
+    */
     public ArrayList<Comentarios> Comentar(Comentarios comentario){
         comentarios.add(comentario);
         return comentarios;
     }
 
-
+    /**
+    * @return sipost
+    * verificador si hay post
+    */
     public boolean isPost() {
         return sipost;
     }
@@ -70,7 +96,7 @@ public abstract class Post {
         return likes;
     }
 
-    //Datos
+    //Datos método abstracto
 	//Mostrar en pantalla los datos 
 	public abstract void mostrar();
 

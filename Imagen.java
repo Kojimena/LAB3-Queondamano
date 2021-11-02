@@ -7,9 +7,10 @@
 import java.util.ArrayList;
 
 public class Imagen extends Multimedia {
-    private String formato;
+    private String formato; //propiedades private
     private int resolucion;
 
+    //constructor de Imagen
     public Imagen(String nombre, ArrayList<String> hashtags , String url, int TamKb, String formato, int resolucion, String fecha){
         super(nombre,hashtags, url, TamKb,fecha);
         this.formato= formato;

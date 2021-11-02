@@ -5,7 +5,7 @@
  */
 import java.util.Calendar;
 
-
+//constructor de fecha
 public class Fecha {
     private int anio;
     private int mes;

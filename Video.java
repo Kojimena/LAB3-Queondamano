@@ -6,14 +6,15 @@
 **/
 import java.util.ArrayList;
 public class Video extends Multimedia{
-    private int Framerate;
+    private int Framerate; //propiedades private
 
+    //constructor de Video
     public Video(String nombre,ArrayList<String> hashtags , String url, int TamKb,int Framerate, String fecha){
     super(nombre, hashtags , url, TamKb,fecha);
     this.Framerate= Framerate;
     }
 
-    //Datos
+    //Datos Override
 	//Mostrar en pantalla los datos 
 	public void mostrar(){
 		System.out.println("\n"+"voy a MOSTRAR este video... con "+ Framerate + " fps ");

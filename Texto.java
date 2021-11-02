@@ -7,19 +7,23 @@
 import java.util.ArrayList;
 
 public class Texto extends Post {
-    private String texto;
+    private String texto; //propiedades private
 
+    //constructor
     public Texto(String nombre, ArrayList<String> hashtags , String texto, String fecha){
         super(nombre,hashtags,fecha);
         this.texto= texto;
     }
 
-
+    /**
+    * @return texto
+    * getter
+    */
     public String getTexto(){
         return texto;
     }
 
-    //Datos
+    //Datos Override
 	//Mostrar en pantalla los datos 
 	public void mostrar(){
 		System.out.println("\n"+"texto: "+ texto);
